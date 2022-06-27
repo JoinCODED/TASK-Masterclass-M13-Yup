@@ -1,15 +1,27 @@
 // Import yup
 
+// Yup Beginner (primitive types)
+
+// number, positive, required
+export const height = null;
+
+// string
+export const title = null;
+
+// Yup Intermediate (simple objects)
+
 /*
-  Person:
+  Person (object):
     - **firstName**: string, required
     - **lastName**: string, optional
     - **age**: positive integer number, required
 */
 export const personSchema = null;
 
+// Yup Intermediate/Advanced (moderately complex objects)
+
 /*
-  Cookie:
+  Cookie (object):
     - **name**: string, required
     - **type**: one of the following ['Chocolate Chip', 'Oat', 'Macademia',
                 'Other'], required
@@ -18,8 +30,10 @@ export const personSchema = null;
 */
 export const cookieSchema = null;
 
+// Yup Advanced (complex objects)
+
 /*
-  User:
+  User (object):
     - **username**: string, must be strings and numbers only
                     and cannot start with number, optional
     - **email**: email, required
