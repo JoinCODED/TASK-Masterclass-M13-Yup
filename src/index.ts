@@ -30,4 +30,6 @@ export const cookieSchema = null;
 */
 export const userSchema = null;
 
+// Bonus: try to get the type of `user` using the `userSchema`
+// Hint: look at the TypeScript section of yup.js's docs
 export type User = unknown;
