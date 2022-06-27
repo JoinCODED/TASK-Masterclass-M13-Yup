@@ -43,3 +43,62 @@ describe("valid person schema", () => {
     }).toThrow();
   });
 });
+
+describe("valid cookie schema", () => {
+  test("is correct type", () => {
+    validateSchema(schemas.cookieSchema);
+  });
+
+  const cookie = validateSchema(schemas.cookieSchema);
+
+  const validInput = {
+    name: "Choco Chip Special",
+    type: "Other",
+    price: 5.5,
+    link: "https://myawesomecookies.com/choco-chip",
+  };
+  test("accepts correct input", () => {
+    expect(cookie.cast(validInput)).toStrictEqual(validInput);
+  });
+
+  test("rejects invalid input", () => {
+    expect(() => {
+      cookie.cast({
+        type: "foo",
+        price: "bar",
+        link: "spam",
+      });
+    }).toThrow();
+  });
+});
+
+describe("valid user schema", () => {
+  test("is correct type", () => {
+    validateSchema(schemas.userSchema);
+  });
+
+  const user = validateSchema(schemas.userSchema);
+
+  const validInput = {
+    username: "foo",
+    email: "foo@bar.com",
+    firstName: "foo",
+    lastName: "bar",
+    password: "fakePassword123",
+    confirmPassword: "fakePassword123",
+  };
+  test("accepts correct input", () => {
+    expect(user.cast(validInput)).toStrictEqual(validInput);
+  });
+
+  test("rejects invalid password", () => {
+    expect(() => {
+      user.cast({
+        username: "_123_foo_",
+        email: "foo",
+        password: "fake",
+        confirmPassword: "fakePassword123",
+      });
+    }).toThrow();
+  });
+});

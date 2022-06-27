@@ -4,8 +4,30 @@
   Person:
     - **firstName**: string, required
     - **lastName**: string, optional
-    - **age**: positive number, required
+    - **age**: positive integer number, required
 */
-export const personSchema = {};
+export const personSchema = null;
 
-export type Person = unknown;
+/*
+  Cookie:
+    - **name**: string, required
+    - **type**: one of the following ['Chocolate Chip', 'Oat', 'Macademia',
+                'Other'], required
+    - **price**: positive float number, required
+    - **link**: string, must be a valid url, optional
+*/
+export const cookieSchema = null;
+
+/*
+  User:
+    - **username**: string, must be strings and numbers only
+                    and cannot start with number, optional
+    - **email**: email, required
+    - **firstName**: string, required
+    - **lastName**: string, optional
+    - **password**: string, must be at least 8 characters, required
+    - **confirmPassword:** string, must match `password`
+*/
+export const userSchema = null;
+
+export type User = unknown;
