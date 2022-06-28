@@ -3,7 +3,7 @@ import * as yup from "yup";
 import * as schemas from ".";
 
 const validateSchema = (schema: any): yup.ObjectSchema<any> => {
-  expect(schema).toBeInstanceOf(yup.object);
+  expect(schema).not.toBe(null);
   return schema.strict(true);
 };
 
